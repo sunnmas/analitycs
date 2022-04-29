@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    = stylesheet_link_tag 'application', media: 'all', cache: 'cache/display'
+    = javascript_include_tag 'application'
+  body
+    = yield
+    .flashes
+      - flash.each do |type, msg|
+        .flash class="flash_#{type}" = msg

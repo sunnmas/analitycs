@@ -1,0 +1,122 @@
+//= require activeadmin_addons/all
+@import 'active_admin/mixins';
+@import 'active_admin/base';
+
+$skinMainSecondColor: #0c6aa4 !default;
+@import 'wigu/active_admin_theme';
+
+@import 'activeadmin/quill_editor/quill.snow';
+@import 'activeadmin/quill_editor_input';
+
+a {
+  text-decoration: none !important;
+}
+
+input:disabled {
+  background-color: #eee !important;
+  border: 1px solid #aaa !important;
+  cursor: not-allowed !important;
+}
+.select2-container--default.select2-container--disabled .select2-selection--single {
+  cursor: not-allowed !important;
+}
+
+//Форма редактирования сущности
+fieldset.inputs, .panel {
+  max-width: 900px;
+  margin: 0 auto;
+  ol {
+   padding: 30px;
+  }
+}
+
+//Инпуты на форме редактирования сущности
+li.input {
+  label {
+    display: inline;
+    width: 20%;
+    box-sizing: border-box;
+  }
+  input {
+    display: inline;
+    width: 80%;
+    box-sizing: border-box;
+  }
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  input[type=checkbox] {
+    display: inline;
+    width: auto;
+    box-sizing: border-box;
+  }
+}
+
+//Чекбокс
+li.boolean {
+  label {
+    width: 100% !important;
+  }
+}
+
+//Кнопки Update, Cancel на форме редакитрования сущности
+fieldset.actions{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  margin-bottom: 0;
+  border-top: 1px #2E2F30 solid;
+  ol {
+    text-align: center;
+  }
+  li {
+    display: inline;
+    float: none !important;
+  }
+}
+
+fieldset.inputs {
+  margin-bottom: 20px;
+}
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.even.complete-row td {
+  background-color: #aee4b3 !important;
+}
+.odd.complete-row td{
+  background-color: #c8e9c6 !important;
+}
+
+.odd.error-row td{
+  background-color: #ff9292 !important;
+}
+.even.error-row td{
+  background-color: #fc7474 !important;
+}
+
+.odd.blue-row td{
+  background-color: #95bdfb !important;
+}
+.even.blue-row td{
+  background-color: #74affc !important;
+}
+
+.odd.orange-row td{
+  background-color: #e7a83c !important;
+}
+.even.orange-row td{
+  background-color: #e7a83c!important;
+}
+
+.localized {
+  background-color: #dddddd;
+  border-radius: 6px;
+  padding: 5px;
+  margin-right: 5px;
+}

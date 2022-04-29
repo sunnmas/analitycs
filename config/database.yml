@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 30
+  database: <%= Rails.application.credentials.postgres[:database] %>
+  username: <%= Rails.application.credentials.postgres[:username] %>
+  password: <%= Rails.application.credentials.postgres[:password] %>
+
+development:
+  <<: *default
+  host: localhost
+
+test:
+  <<: *default
+  host: localhost
+  database: <%= Rails.application.credentials.postgres[:database] %><%= ENV['TEST_ENV_NUMBER'] %>
+staging:
+  <<: *default
+  host: pg-master
+
+production:
+  <<: *default
+  host: pg-master

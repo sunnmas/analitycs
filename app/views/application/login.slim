@@ -1,0 +1,13 @@
+#background
+  #auth-form-wrapper
+    #logo
+      = raw image_tag('logo.svg')
+    #auth-form
+      h1 = t('user.sign_in_form.title')
+      = form_for(User.new, as: :user, url: authenticate_path) do |f|
+        #auth-inputs
+          = f.text_field :email, placeholder: t('user.sign_in_form.email'), autofocus: true
+          = f.password_field :password, placeholder: t('user.sign_in_form.password')
+        .error = @error
+        button.button type='submit' = t('user.sign_in_form.button')
+  #app-version = "VERSION INFO: #{$VERSION}"

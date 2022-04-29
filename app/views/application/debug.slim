@@ -1,0 +1,18 @@
+#background
+  form#debug-form url=debug_url
+    input type='text' name='error_id' placeholder='Error identifier' value=@error_id
+    button.button type='submit' Inspect
+  h1.error = @error_id
+  #debug
+    - if @error_id.present? && @exception.present?
+      #message.error = @exception[:message]
+      #time = "Occured at: #{@exception[:time]}\n" rescue nil
+      #trace
+        - if @exception.present?
+          - @exception[:backtrace].each do |line|
+            - root = Rails.root.to_s
+            - if line.include?(root)
+              - path = line.gsub(root, '').match(/.+:\d+/)[0][1..-1]
+              a class='error' href="jetbrains://rubymine/navigate/reference?project=telegram_analytic&path=#{path}:1" =line
+            - else
+              div =line

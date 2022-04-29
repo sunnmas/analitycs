@@ -1,0 +1,196 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'active_admin';
+.inline-block {
+  display: inline-block;
+}
+.button {
+  background-color: $skinMainSecondColor !important;
+  background-image: unset;
+  border-radius: 4px;
+  min-width: 60px;
+  height: 32px !important;
+  margin: 0 auto;
+  padding: 0 5px;
+  border: none;
+  text-shadow: none;
+  transition-duration: 1s;
+  text-align: center;
+  line-height: 32px !important;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+.button:hover {
+  background-color: $skinMainSecondColor !important;
+  background-image: none !important;
+  opacity: 0.7;
+}
+.button.inline-block {
+  margin-right: 10px;
+}
+.button.white-button {
+  background-color: white !important;
+  border: 1px solid #b9b9b9;
+  color: #5E6469;
+  box-sizing: border-box;
+  line-height: 30px !important;
+}
+.button.white-button:hover {
+  background-color: #f3f3f3 !important;
+}
+
+form fieldset > ol > li.boolean.checkbox_first {
+  label {
+    padding-left: 0;
+  }
+}
+
+input.error, select.error, textarea.error{
+  background-color: #fdd1d4 !important;
+  border: 1px solid #730E15 !important;
+}
+
+
+#background {
+  width: 100%;
+  height: 100%;
+  background-color: #323537;
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px !important;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    width: 100%;
+  }
+  .error {
+    color: #e42525;
+    margin-bottom: 20px;
+  }
+}
+
+#auth-form-wrapper {
+  background-color: #323537;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+  &:before {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+  }
+  #auth-form {
+    background-color: #F1F2F7;;
+    width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: middle;
+    text-align: left;
+
+    .button {
+      display: block;
+    }
+  }
+  #logo {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+  }
+}
+
+#app-version {
+  text-align: center;
+  color: #efefef;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  z-index: 2;
+}
+
+#debug-form {
+  display: block;
+  width: 420px;
+  margin: 0 auto;
+  padding: 20px 0;
+  input {
+    width: 300px;
+  }
+  .button {
+    display: inline;
+    margin-left: 20px;
+  }
+}
+
+#debug {
+  color: #efefef;
+  padding: 0 50px 100px 50px;
+  min-height: 2000px;
+  #message {
+    font-size: 25px;
+    text-align: center;
+  }
+  #time {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  #trace .error {
+    color: #e42525;
+    margin-bottom: 0px;
+  }
+  #trace {
+    .line {
+      max-width: 850px;
+      margin: 0 auto;
+      .time {
+        display: inline-block;
+        width: 20%;
+        margin-bottom: 10px;
+        font-weight: 700;
+        color: #ff7607;
+      }
+
+      .message {
+        display: inline-block;
+        width: 80%;
+        margin-bottom: 10px;
+        border-bottom: 1px #ff7607 solid;
+      }
+    }
+  }
+  #transaction {
+    color: #7bdd1a;
+    font-weight: 700;
+    max-width: 850px;
+    margin: 20px auto;
+  }
+}
