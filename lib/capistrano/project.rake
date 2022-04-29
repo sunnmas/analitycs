@@ -56,6 +56,6 @@ namespace :project do
   before :deploy, 'deploy:ssh_add'
   # # before :deploy, 'deploy:sudo'
   before :deploy, 'project:create_directories'
-  # after  :deploy, 'project:release_files'
+  after  :deploy, 'docker:build'
   # after  :release_files, :copy_key_to_release
 end
